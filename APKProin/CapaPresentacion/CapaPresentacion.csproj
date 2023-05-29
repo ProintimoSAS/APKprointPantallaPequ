@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\WiX.3.11.2\build\wix.props" Condition="Exists('..\packages\WiX.3.11.2\build\wix.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4AE1041D-3A6F-4B29-93A1-1F98AD0A52A4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CapaPresentacion</RootNamespace>
+    <AssemblyName>Eficiencia Prointimo</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\instaladorPlanDePiso\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>23</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>rendimiento.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>D92D08FFA29D3D41229F9A36D937C1AADD564A45</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>CapaPresentacion_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\Bunifu_UI_v1.5.3\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.4.8, Version=4.8.20223.588, Culture=neutral, PublicKeyToken=944ae1ea0e47ca04, processorArchitecture=MSIL">
+      <HintPath>..\packages\C1.Win.4.8.20223.588\lib\net48\C1.Win.4.8.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1FlexGrid.4.8, Version=4.8.20223.588, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL">
+      <HintPath>..\packages\C1.Win.C1FlexGrid.4.8.20223.588\lib\net48\C1.Win.C1FlexGrid.4.8.dll</HintPath>
+    </Reference>
+    <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.SystemEvents, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.SystemEvents.4.7.0\lib\net461\Microsoft.Win32.SystemEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcInstaller.MVC3, Version=2.0.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvcInstaller.MVC3.2.0.1.0\lib\net40\MvcInstaller.MVC3.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.EventLog, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.EventLog.4.7.0\lib\net461\System.Diagnostics.EventLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.ServiceProcess.ServiceController, Version=4.2.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ServiceProcess.ServiceController.4.7.0\lib\net461\System.ServiceProcess.ServiceController.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TopShelf.ServiceInstaller, Version=4.3.0.0, Culture=neutral, PublicKeyToken=b800c4cfcdeea87b, processorArchitecture=MSIL">
+      <HintPath>..\packages\TopShelf.ServiceInstaller.4.3.0\lib\netstandard2.0\TopShelf.ServiceInstaller.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmDashBoardReal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDashBoardReal.Designer.cs">
+      <DependentUpon>frmDashBoardReal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIngresoFabricadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIngresoFabricadas.Designer.cs">
+      <DependentUpon>frmIngresoFabricadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCalidad.Designer.cs">
+      <DependentUpon>frmCalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmControlPiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmControlPiso.Designer.cs">
+      <DependentUpon>frmControlPiso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAccesosControlPiso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAccesosControlPiso.Designer.cs">
+      <DependentUpon>frmAccesosControlPiso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDashboar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDashboar.Designer.cs">
+      <DependentUpon>frmDashboar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIngresoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIngresoEmpleado.Designer.cs">
+      <DependentUpon>frmIngresoEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIngresoInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIngresoInfo.Designer.cs">
+      <DependentUpon>frmIngresoInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIngresoTallas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIngresoTallas.Designer.cs">
+      <DependentUpon>frmIngresoTallas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMecanico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMecanico.Designer.cs">
+      <DependentUpon>frmMecanico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPresentacionIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPresentacionIngreso.Designer.cs">
+      <DependentUpon>frmPresentacionIngreso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPresentacionInicioPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPresentacionInicioPrincipal.Designer.cs">
+      <DependentUpon>frmPresentacionInicioPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmDashBoardReal.resx">
+      <DependentUpon>frmDashBoardReal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIngresoFabricadas.resx">
+      <DependentUpon>frmIngresoFabricadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCalidad.resx">
+      <DependentUpon>frmCalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmControlPiso.resx">
+      <DependentUpon>frmControlPiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAccesosControlPiso.resx">
+      <DependentUpon>frmAccesosControlPiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDashboar.resx">
+      <DependentUpon>frmDashboar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIngresoEmpleado.resx">
+      <DependentUpon>frmIngresoEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIngresoInfo.resx">
+      <DependentUpon>frmIngresoInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIngresoTallas.resx">
+      <DependentUpon>frmIngresoTallas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMecanico.resx">
+      <DependentUpon>frmMecanico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPresentacionIngreso.resx">
+      <DependentUpon>frmPresentacionIngreso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPresentacionInicioPrincipal.resx">
+      <DependentUpon>frmPresentacionInicioPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="CapaPresentacion_TemporaryKey.pfx" />
+    <None Include="installer.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
+      <Project>{0d2c8070-487f-4ce2-8464-9e7177747368}</Project>
+      <Name>CapaEntidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{1bfda2fd-9af0-4802-994e-bd56d17d3f9d}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO PROINTIMO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="engranaje.ico" />
+    <Content Include="MvcInstaller\ajax-loader.gif" />
+    <Content Include="MvcInstaller\jquery-1.6.1.min.js" />
+    <Content Include="MvcInstaller\Site.css" />
+    <Content Include="rendimiento.ico" />
+    <Content Include="Resources\Mesa-de-trabajo-1.png" />
+    <Content Include="Views\Install\Index.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\WiX.3.11.2\build\wix.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\WiX.3.11.2\build\wix.props'))" />
+    <Error Condition="!Exists('..\packages\BuildInstaller.1.0.0\build\BuildInstaller.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildInstaller.1.0.0\build\BuildInstaller.targets'))" />
+  </Target>
+  <Import Project="..\packages\BuildInstaller.1.0.0\build\BuildInstaller.targets" Condition="Exists('..\packages\BuildInstaller.1.0.0\build\BuildInstaller.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

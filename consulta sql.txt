@@ -1,0 +1,282 @@
+use  APKProin;
+
+drop table tblEmpleado
+
+create table tblEmpleado
+
+(codigo int identity,
+CodigoEmpleado varchar (10) not null,
+Nombre varchar (30)not null,
+Apellido varchar (30)not null,
+CentroCostos varchar (10)not null,
+Cargo varchar(30)not null,
+ primary key(CodigoEmpleado));
+ go
+
+ insert into tblEmpleado values
+('I130100','MILENA',
+'SUÑIGA BERNA','I130','MESERA')
+go
+ insert into tblEmpleado values
+('I130101','ELIANA',
+'VILLADA RAMIREZ','I130','MESERA')
+go
+ insert into tblEmpleado values
+('I150100','JAVIER',
+'VILLADA BEDOYA','I130','MESERA')
+go
+ insert into tblEmpleado values
+('I150101','MILAN',
+'CORVA BEDOYA','I130','MESERA')
+go
+ insert into tblEmpleado values
+('I160100','EMILIO',
+'DARDONA BOLIBAR','I130','MESERA')
+go
+select * from tblEmpleado /* cosulta de la tabla empleado*/
+select Nombre, Apellido from tblEmpleado
+go
+
+select Nombre, Apellido from tblEmpleado
+where Nombre='ANDRES FELIPE';
+
+select nombre, apellido, CentroCostos from tblEmpleado
+where CentroCostos = 'i130';
+
+select nombre, apellido, CentroCostos from tblEmpleado
+where CentroCostos = 'i150';
+
+select nombre, apellido, cargo from tblEmpleado
+where cargo = 'almacenista';
+
+delete  from tblEmpleado
+where CodigoEmpleado ='i130103';
+
+delete  from tblEmpleado
+where Nombre ='MARGARA';
+
+update tblEmpleado set CentroCostos='i142'
+where CentroCostos = 'i130';
+
+truncate table tblEmpleado
+
+select *  from tblEmpleado;
+
+set identity_insert tblempleado on;
+
+create table empleados(
+  nombre varchar(20),
+  documento char(8),
+  fechaingreso datetime
+);
+
+go
+set dateformat dmy;
+insert into empleados values('Ana Gomez','22222222','12-01-1980');
+insert into empleados values('Bernardo Huerta','23333333','15-03-81');
+insert into empleados values('Carla Juarez','24444444','20/05/1983');
+insert into empleados values('Daniel Lopez','25555555','2.5.1990');
+
+select * from empleados;
+
+truncate table empleados;
+select * from empleados where fechaingreso<'01-01-1985';
+update empleados set nombre='Maria Carla Juarez' where fechaingreso='20.5.83';
+
+create table libros(
+  codigo int identity,
+  titulo varchar(40),
+  autor varchar(30) not null default 'Desconocido', 
+  editorial varchar(20),
+  precio decimal(5,2),
+  cantidad tinyint default 0
+ );
+ drop table libros;
+
+ create table libros(
+  codigo int identity,
+  titulo varchar(40) not null,
+  autor varchar(20) default 'Desconocido',
+  editorial varchar(20),
+  precio decimal(6,2),
+  cantidad tinyint default 0,
+  primary key (codigo)
+);
+
+go
+insert into libros (titulo,autor,editorial,precio)
+  values('El aleph','','Emece',25);
+insert into libros
+  values('Java en 10 minutos','Mario Molina','Siglo XXI',50.40,100);
+insert into libros (titulo,autor,editorial,precio,cantidad)
+  values('Alicia en el pais de las maravillas','Lewis Carroll','Emece',15,50);
+
+  select * from libros;
+  select titulo, precio,cantidad,
+  precio*cantidad
+  from libros;
+  select titulo,precio,
+  precio-(precio*0.1)
+  from libros;
+
+  update libros set precio=precio-(precio*0.1);
+
+  select titulo+'-'+autor+'-'+editorial
+  from libros;
+
+
+  create table agenda(
+  nombre varchar(30),
+  domicilio varchar(30),
+  telefono varchar(11)
+);
+
+go
+
+insert into agenda
+  values('Juan Perez','Avellaneda 908','4252525');
+insert into agenda
+  values('Marta Lopez','Sucre 34','4556688');
+insert into agenda
+  values('Carlos Garcia','Sarmiento 1258',null);
+
+  select * from agenda;
+
+select nombre as NombreYApellido,
+  domicilio,telefono
+  from agenda;
+
+select nombre as 'Nombre y apellido',
+  domicilio,telefono
+  from agenda;
+
+select nombre 'Nombre y apellido',
+  domicilio,telefono
+  from agenda;
+
+   select substring('Buenas tardes buenas',8,6);
+
+
+   if object_id ('libros') is not null
+  drop table libros;
+
+create table libros(
+  codigo int identity,
+  titulo varchar(40) not null,
+  autor varchar(20) default 'Desconocido',
+  editorial varchar(20),
+  precio decimal(6,2),
+  primary key (codigo)
+);
+
+go
+
+insert into libros (titulo,autor,editorial,precio)
+  values('El aleph','Borges','Emece',25.33);
+insert into libros
+  values('Java en 10 minutos','Mario Molina','Siglo XXI',50.65);
+insert into libros (titulo,autor,editorial,precio)
+  values('Alicia en el pais de las maravillas','Lewis Carroll','Emece',19.95);
+
+-- Vamos a mostrar los precios de los libros redondeando el valor hacia abajo y hacia arriba:
+select titulo,autor,precio,
+  floor(precio) as abajo,
+  ceiling(precio) as arriba
+  from libros;
+
+
+
+  if object_id ('libros') is not null
+  drop table libros;
+
+create table libros(
+  titulo varchar(40) not null,
+  autor varchar(20) default 'Desconocido',
+  editorial varchar(20),
+  edicion datetime,
+  precio decimal(6,2)
+);
+
+go
+
+set dateformat ymd;
+
+insert into libros 
+  values('El aleph','Borges','Emece','1980/10/10',25.33);
+insert into libros 
+  values('Java en 10 minutos','Mario Molina','Siglo XXI','2000/05/05',50.65);
+insert into libros 
+values('Alicia en el pais de las maravillas','Lewis Carroll','Emece','2000/08/09',19.95);
+insert into libros 
+  values('Aprenda PHP','Mario Molina','Siglo XXI','2000/02/04',45);
+
+  select * from libros;
+
+-- Mostramos el título del libro y el año de edición:
+select titulo, datepart (year,edicion) from libros;
+
+-- Mostramos el título del libro y el nombre del mes de edición:
+select titulo, datename (month,edicion) from libros;
+
+-- Mostramos el título del libro y los años que tienen de editados:
+select titulo, datediff(year,edicion,getdate()) from libros;
+
+-- Muestre los títulos de los libros que se editaron el día 9, de cualquier mes de cualquier año:
+ select titulo from libros
+  where datepart(day,edicion)=9;
+
+  -- taller --
+  if object_id ('empleados') is not null
+  drop table empleados;
+
+  create table empleados(
+  nombre varchar(30) not null,
+  apellido varchar(20) not null,
+  documento char(8),
+  fechanacimiento datetime,
+  fechaingreso datetime,
+  sueldo decimal(6,2),
+  primary key(documento)
+ );
+ insert into empleados values('Ana','Acosta','22222222','1970/10/10','1995/05/05',228.50);
+ insert into empleados values('Carlos','Caseres','25555555','1978/02/06','1998/05/05',309);
+ insert into empleados values('Francisco','Garcia','26666666','1978/10/15','1998/10/02',250.68);
+ insert into empleados values('Gabriela','Garcia','30000000','1985/10/25','2000/12/22',300.25);
+ insert into empleados values('Luis','Lopez','31111111','1987/02/10','2000/08/21',350.98);
+ 
+  select* from empleados;
+
+ -- Muestre nombre y apellido concatenados, con el apellido en letras mayúsculas, el documento 
+--precedido por "DNI Nº " y el sueldo precedido por "$ ".
+select nombre+space(1)+upper(apellido) as nombre,
+  stuff(documento,1,0,'DNI Nº ') as documento,
+  stuff(sueldo,1,0,'$ ') as sueldo from empleados;
+
+
+-- Muestre el documento y el sueldo redondeado hacia arriba y precedido por "$ ".
+ select documento, stuff(ceiling(sueldo),1,0,'$ ') from empleados;
+
+-- Muestre los nombres y apellidos de los empleados que cumplen años en el mes "october" (3 
+--registros)
+ select nombre,apellido from empleados
+  where datename(month,fechanacimiento)='october';
+
+-- Muestre los nombres y apellidos de los empleados que ingresaron en un determinado año (2 
+--registros).
+select nombre,apellido from empleados
+  where datepart(year,fechaingreso)=2000;  
+
+  select *from libros
+ order by titulo;
+
+   select titulo,autor,precio
+  from libros order by 3;
+
+   select * from libros
+  order by editorial desc;
+
+  select * from libros
+  order by titulo,editorial;
+
+  select * from libros
+  order by titulo asc, editorial desc;
